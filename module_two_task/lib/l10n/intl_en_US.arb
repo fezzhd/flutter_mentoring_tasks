@@ -1,0 +1,6 @@
+{
+  "title": "Module Two",
+  "hello": "Hello",
+  "chip": "Chip {number}",
+  "pressMe" : "Press Me"
+}

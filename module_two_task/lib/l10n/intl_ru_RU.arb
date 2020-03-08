@@ -1,0 +1,6 @@
+{
+  "title": "Модуль Два",
+  "hello": "Привет",
+  "chip": "Chip {number}",
+  "pressMe" : "Нажми меня"
+}
