@@ -19,8 +19,21 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en_US';
 
+  static m0(value) => "Result is ${value}";
+
+  static m1(value) => "Return ${value}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-
+    "exitConfirmationContent" : MessageLookupByLibrary.simpleMessage("Are you sure ?"),
+    "exitConfirmationTitle" : MessageLookupByLibrary.simpleMessage("Exit"),
+    "firstRouteTitle" : MessageLookupByLibrary.simpleMessage("First route"),
+    "no" : MessageLookupByLibrary.simpleMessage("No"),
+    "ok" : MessageLookupByLibrary.simpleMessage("Ok"),
+    "pressMe" : MessageLookupByLibrary.simpleMessage("Press me"),
+    "resultIs" : m0,
+    "returnButton" : m1,
+    "secondRouteTitle" : MessageLookupByLibrary.simpleMessage("Second route"),
+    "yes" : MessageLookupByLibrary.simpleMessage("Yes")
   };
 }

@@ -29,7 +29,95 @@ class AppLocalization {
 
   final String localeName;
 
+  String get pressMe {
+    return Intl.message(
+      'Press me',
+      name: 'pressMe',
+      desc: '',
+      args: [],
+    );
+  }
 
+  String get firstRouteTitle {
+    return Intl.message(
+      'First route',
+      name: 'firstRouteTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get secondRouteTitle {
+    return Intl.message(
+      'Second route',
+      name: 'secondRouteTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String returnButton(dynamic value) {
+    return Intl.message(
+      'Return $value',
+      name: 'returnButton',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  String resultIs(dynamic value) {
+    return Intl.message(
+      'Result is $value',
+      name: 'resultIs',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  String get ok {
+    return Intl.message(
+      'Ok',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get exitConfirmationTitle {
+    return Intl.message(
+      'Exit',
+      name: 'exitConfirmationTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get exitConfirmationContent {
+    return Intl.message(
+      'Are you sure ?',
+      name: 'exitConfirmationContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get yes {
+    return Intl.message(
+      'Yes',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get no {
+    return Intl.message(
+      'No',
+      name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {

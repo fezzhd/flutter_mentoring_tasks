@@ -1,1 +1,12 @@
-{}
+{
+  "pressMe" : "Press me",
+  "firstRouteTitle" : "First route",
+  "secondRouteTitle" : "Second route",
+  "returnButton" : "Return {value}",
+  "resultIs" : "Result is {value}",
+  "ok" : "Ok",
+  "exitConfirmationTitle" : "Exit",
+  "exitConfirmationContent": "Are you sure ?",
+  "yes" : "Yes",
+  "no" : "No"
+}
