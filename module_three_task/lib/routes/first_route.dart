@@ -65,7 +65,6 @@ class FirstRoute extends StatelessWidget{
         barrierDismissible: false,
         context: context,
         builder: (context) => AlertDialog(
-
           title: Text(AppLocalization.of(context).resultIs(result)),
           actions: <Widget>[
             FlatButton(

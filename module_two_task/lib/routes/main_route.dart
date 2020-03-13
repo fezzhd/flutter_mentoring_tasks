@@ -32,8 +32,8 @@ class MainRoute extends StatelessWidget {
                   size: 100,
                 ),
                 Container(
-                    margin: const EdgeInsets.symmetric(vertical: 20),
-                    child: Text(AppLocalization.of(context).hello)),
+                  margin: const EdgeInsets.symmetric(vertical: 20),
+                  child: Text(AppLocalization.of(context).hello)),
                 Wrap(
                   direction: Axis.horizontal,
                   spacing: 20,
