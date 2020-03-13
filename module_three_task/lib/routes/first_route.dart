@@ -41,6 +41,7 @@ class FirstRoute extends StatelessWidget{
 
   Future<bool> _exitAppDialog(BuildContext context){
     return showDialog(
+      barrierDismissible: false,
       context: context,
       builder: (context) => AlertDialog(
         title: Text(AppLocalization.of(context).exitConfirmationTitle),
@@ -61,8 +62,10 @@ class FirstRoute extends StatelessWidget{
 
   Future _showResultDialog(BuildContext context, String result) {
     return showDialog(
+        barrierDismissible: false,
         context: context,
         builder: (context) => AlertDialog(
+
           title: Text(AppLocalization.of(context).resultIs(result)),
           actions: <Widget>[
             FlatButton(
