@@ -9,8 +9,23 @@ class PostView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Column(
-
+      children: [
+        RichText(
+          text: TextSpan(
+              text: "${post.id.toString()}. ",
+              style: TextStyle(fontWeight: FontWeight.bold),
+              children: [
+                TextSpan(
+                    text: post.title
+                )
+              ]
+          )
+        ),
+        Container(
+            padding: const EdgeInsets.all(5),
+            child: Text(post.body)
+        )
+      ],
     );
   }
-  
 }
