@@ -29,7 +29,23 @@ class AppLocalization {
 
   final String localeName;
 
+  String get selectPosts {
+    return Intl.message(
+      'Select posts',
+      name: 'selectPosts',
+      desc: '',
+      args: [],
+    );
+  }
 
+  String get noData {
+    return Intl.message(
+      'No data',
+      name: 'noData',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
