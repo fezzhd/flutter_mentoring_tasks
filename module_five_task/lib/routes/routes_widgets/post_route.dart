@@ -29,7 +29,7 @@ class _PostRouteState extends State<PostRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text(AppLocalization.of(context).mainRouteTitle)),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -46,7 +46,8 @@ class _PostRouteState extends State<PostRoute> {
                   },
                 ),
                 MaterialButton(
-                  child: Text(AppLocalization.of(context).selectPosts),
+                  color: Theme.of(context).primaryColor,
+                  child: Text(AppLocalization.of(context).selectPostTitle),
                   onPressed: () => _postViewModel.getPostFromList(),
                 )
               ],

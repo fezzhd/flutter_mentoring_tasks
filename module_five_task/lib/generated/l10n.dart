@@ -29,19 +29,28 @@ class AppLocalization {
 
   final String localeName;
 
-  String get selectPosts {
+  String get noData {
     return Intl.message(
-      'Select posts',
-      name: 'selectPosts',
+      'No data',
+      name: 'noData',
       desc: '',
       args: [],
     );
   }
 
-  String get noData {
+  String get mainRouteTitle {
     return Intl.message(
-      'No data',
-      name: 'noData',
+      'Post',
+      name: 'mainRouteTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get selectPostTitle {
+    return Intl.message(
+      'Select a post',
+      name: 'selectPostTitle',
       desc: '',
       args: [],
     );

@@ -1,4 +1,5 @@
 {
-  "selectPosts": "Select posts",
-  "noData": "No data"
+  "noData": "No data",
+  "mainRouteTitle" : "Post",
+  "selectPostTitle" : "Select a post"
 }

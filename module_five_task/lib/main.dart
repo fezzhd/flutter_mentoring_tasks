@@ -5,6 +5,7 @@ import 'package:module_five_task/core/services/navigation_service.dart';
 import 'package:module_five_task/core/services/posts/post_service.dart';
 import 'package:module_five_task/core/view_models/post_list_view_model.dart';
 import 'package:module_five_task/core/view_models/post_view_model.dart';
+import 'package:module_five_task/routes/routes_widgets/post_list_route.dart';
 import 'package:module_five_task/routes/routes_widgets/post_route.dart';
 import 'core/consts/routes_paths.dart' as RoutesPaths;
 import 'generated/l10n.dart';
@@ -16,10 +17,10 @@ void main() {
 }
 
 void _initializeBootstrapper(){
-  getIt.registerSingleton<NavigationService>(NavigationService());
-  getIt.registerSingletonWithDependencies<PostViewModel>(() => PostViewModel(), dependsOn: [NavigationService]);
-  getIt.registerLazySingleton(() => PostService());
-  getIt.registerSingletonWithDependencies(() => PostListViewModel(), dependsOn: [NavigationService, PostService]);
+  getIt.registerLazySingleton<NavigationService>(() => NavigationService());
+  getIt.registerLazySingleton<PostViewModel>(() => PostViewModel());
+  getIt.registerLazySingleton<PostService>(() => PostService());
+  getIt.registerFactory<PostListViewModel>(() => PostListViewModel());
 }
 
 class MyApp extends StatelessWidget {
@@ -35,6 +36,14 @@ class MyApp extends StatelessWidget {
       supportedLocales: AppLocalization.delegate.supportedLocales,
       theme: ThemeData(
         primarySwatch: Colors.red,
+        primaryTextTheme: TextTheme(
+          button: TextStyle(
+            color: Colors.black
+          ),
+          bodyText1: TextStyle(
+            color: Colors.black
+          )
+        )
       ),
       navigatorKey: getIt.get<NavigationService>().navigatorKey,
       initialRoute: RoutesPaths.postRoute,
@@ -47,7 +56,7 @@ class MyApp extends StatelessWidget {
       case RoutesPaths.postRoute:
         return MaterialPageRoute(builder: (_) => PostRoute());
       case RoutesPaths.listPostRoute:
-        return MaterialPageRoute(builder: (_) => FlutterLogo());
+        return MaterialPageRoute(builder: (_) => PostListRoute());
       default:
         return null;
     }
