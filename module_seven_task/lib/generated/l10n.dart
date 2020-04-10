@@ -27,7 +27,41 @@ class AppLocalization {
     return Localizations.of<AppLocalization>(context, AppLocalization);
   }
 
+  String get title {
+    return Intl.message(
+      'Module Seven',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
 
+  String get web_view {
+    return Intl.message(
+      'Web View',
+      name: 'web_view',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get map {
+    return Intl.message(
+      'Map',
+      name: 'map',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get video {
+    return Intl.message(
+      'Video',
+      name: 'video',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
@@ -35,7 +69,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
 
   List<Locale> get supportedLocales {
     return const <Locale>[
-      Locale.fromSubtags(languageCode: 'en', countryCode: 'US'), Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'en', countryCode: 'US'),
     ];
   }
 

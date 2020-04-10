@@ -1,1 +1,6 @@
-{}
+{
+  "title": "Module Seven",
+  "web_view": "Web View",
+  "map": "Map",
+  "video" : "Video"
+}
