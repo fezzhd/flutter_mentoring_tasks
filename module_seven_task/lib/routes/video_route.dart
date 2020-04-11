@@ -20,6 +20,7 @@ class _VideoRouteState extends State<VideoRoute> {
     _controller = VideoPlayerController.network(
        "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4");
 
+    _controller.setLooping(true);
     _videoPlayerInitializeFuture = _controller.initialize();
   }
 
@@ -41,7 +42,6 @@ class _VideoRouteState extends State<VideoRoute> {
       future: _videoPlayerInitializeFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done){
-          _controller.setLooping(true);
           _controller.play();
           return Center(
             child: AspectRatio(
