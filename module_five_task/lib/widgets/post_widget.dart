@@ -4,7 +4,7 @@ import 'package:module_five_task/core/services/posts/models/post.dart';
 class PostWidget extends StatelessWidget{
   final Post post;
 
-  PostWidget({Key key, this.post}) : super(key: key);
+  PostWidget({Key key, @required this.post}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -21,11 +21,11 @@ class PostListViewModel{
   }
 
   void back(){
-    _navigateBack(null);
+    _navigateBack();
   }
 
   void navigateBackWithPost(Post post){
-    _navigateBack(post);
+    _navigateBack(post: post);
   }
 
   Future updateList() async{
@@ -33,7 +33,7 @@ class PostListViewModel{
     postObservable.add(newPosts);
   }
 
-  void _navigateBack(Post post){
+  void _navigateBack({Post post}){
     _navigationService.navigateBack(result: post);
   }
 }

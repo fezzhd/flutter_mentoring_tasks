@@ -6,6 +6,7 @@ import 'package:module_five_task/generated/l10n.dart';
 import 'package:module_five_task/widgets/post_widget.dart';
 
 class PostRoute extends StatefulWidget{
+
   @override
   _PostRouteState createState() => _PostRouteState();
 }
@@ -18,11 +19,12 @@ class _PostRouteState extends State<PostRoute> {
   @override
   void initState() {
     super.initState();
-    _postViewModel =  locator.get<PostViewModel>();
+    _postViewModel = locator.get<PostViewModel>();
   }
+
   @override
   void dispose() {
-    locator.get<PostViewModel>().postObservable.close();
+    _postViewModel.postObservable.close();
     super.dispose();
   }
 

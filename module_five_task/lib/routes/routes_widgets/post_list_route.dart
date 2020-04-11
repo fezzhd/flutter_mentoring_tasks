@@ -11,9 +11,9 @@ class PostListRoute extends StatefulWidget{
 }
 
 class _PostListRouteState extends State<PostListRoute> {
-  
+
   PostListViewModel _postListViewModel;
-  
+
   @override
   void initState() {
     super.initState();
@@ -40,7 +40,7 @@ class _PostListRouteState extends State<PostListRoute> {
               return Center(
                 child: CircularProgressIndicator()
               );
-            } else{
+            } else {
               return RefreshIndicator(
                 child: ListView.builder(
                   itemBuilder: (context, itemIndex) =>
