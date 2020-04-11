@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
+import 'package:module_seven_task/routes/map_route.dart';
+import 'package:module_seven_task/routes/video_route.dart';
+import 'package:module_seven_task/routes/web_view_route.dart';
 import 'generated/l10n.dart';
 
 void main() {
@@ -34,14 +36,23 @@ class _BottomNavigationRoute extends StatefulWidget{
 
 class _BottomNavigationState extends State<_BottomNavigationRoute>{
 
+  int _selectedIndex = 0;
+  final List<Widget> _widgetList = <Widget> [
+    WebViewRoute(),
+    MapRoute(),
+    VideoRoute()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalization.of(context).title),
       ),
+      body: _widgetList[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
+        currentIndex: _selectedIndex,
+        onTap: _itemTapped,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.web),
@@ -60,5 +71,11 @@ class _BottomNavigationState extends State<_BottomNavigationRoute>{
     );
   }
 
+
+  void _itemTapped(int value) {
+    setState(() {
+      _selectedIndex = value;
+    });
+  }
 }
 
