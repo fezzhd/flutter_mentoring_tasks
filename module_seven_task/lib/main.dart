@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:module_seven_task/routes/map_route.dart';
-import 'package:module_seven_task/routes/video_route.dart';
-import 'package:module_seven_task/routes/web_view_route.dart';
+import 'package:module_seven_task/routes/routes.dart';
 import 'generated/l10n.dart';
 
 void main() {
