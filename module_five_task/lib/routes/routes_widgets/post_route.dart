@@ -41,7 +41,7 @@ class _PostRouteState extends State<PostRoute> {
                   stream: _postViewModel.postObservable,
                   builder: (context, snapshot) {
                     if (!snapshot.hasData){
-                      return Text(AppLocalization.of(context).noData);
+                      return Text(AppLocalization.of(context).noPost);
                     } else {
                       return PostWidget(post: snapshot.data);
                     }
