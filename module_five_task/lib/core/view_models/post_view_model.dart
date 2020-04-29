@@ -1,7 +1,7 @@
 import 'package:module_five_task/core/services/posts/models/post.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:get_it/get_it.dart';
-import 'package:module_five_task/core/services/navigation_service.dart';
+import 'package:module_five_task/core/services/app_services/navigation_service.dart';
 import '../consts/routes_paths.dart' as RoutesPaths;
 
 class PostViewModel {
