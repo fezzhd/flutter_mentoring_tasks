@@ -20,4 +20,8 @@ class PostViewModel {
       postObservable.sink.add(post);
     }
   }
+
+  void navigateToSettings(){
+    _navigationService.pushRoute(RoutesPaths.settingsRoute);
+  }
 }
