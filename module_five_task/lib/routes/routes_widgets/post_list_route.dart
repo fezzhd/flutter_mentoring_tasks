@@ -30,7 +30,9 @@ class _PostListRouteState extends State<PostListRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppLocalization.of(context).selectPostTitle)),
+      appBar: AppBar(
+        title: Text(AppLocalization.of(context).selectPostTitle)
+      ),
       body: SafeArea(
         bottom: false,
         child: StreamBuilder<List<Post>>(

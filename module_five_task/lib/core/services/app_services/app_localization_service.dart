@@ -31,6 +31,4 @@ class AppLocalizationService with SharedPreferencesMixin{
 
     return currentLocale;
   }
-
-
 }

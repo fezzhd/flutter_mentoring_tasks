@@ -31,7 +31,15 @@ class _PostRouteState extends State<PostRoute> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppLocalization.of(context).mainRouteTitle)),
+      appBar: AppBar(
+        title: Text(AppLocalization.of(context).mainRouteTitle),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () => _postViewModel.navigateToSettings(),
+          )
+        ],
+      ),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
