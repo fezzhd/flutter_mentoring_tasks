@@ -15,6 +15,7 @@ import 'generated/l10n.dart';
 
 GetIt getIt = GetIt.instance;
 AppViewModel _appViewModel;
+
 Future main() async{
   _initializeBootstrapper();
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,8 +44,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void dispose() {
-    _appViewModel.localizationSubject.close();
-
+    _appViewModel.dispose();
     super.dispose();
   }
   @override

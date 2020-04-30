@@ -1,11 +1,12 @@
 import 'dart:async';
+import 'package:module_five_task/core/shared/disposable.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:module_five_task/core/services/app_services/navigation_service.dart';
 import 'package:module_five_task/core/services/posts/models/post.dart';
 import 'package:module_five_task/core/services/posts/post_service.dart';
 import 'package:module_five_task/core/view_models/view_model_mixin.dart';
 
-class PostListViewModel with ViewModelMixin {
+class PostListViewModel with ViewModelMixin implements Disposable {
 
   PostService _postService;
   NavigationService _navigationService;
@@ -32,5 +33,10 @@ class PostListViewModel with ViewModelMixin {
 
   void _navigateBack({Post post}){
     _navigationService.navigateBack(result: post);
+  }
+
+  @override
+  void dispose() {
+    postObservable.close();
   }
 }
