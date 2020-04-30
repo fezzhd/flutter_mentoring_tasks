@@ -23,7 +23,7 @@ class _PostListRouteState extends State<PostListRoute> {
   
   @override
   void dispose() {
-    _postListViewModel.postObservable.close();
+    _postListViewModel.dispose();
     super.dispose();
   }
   
