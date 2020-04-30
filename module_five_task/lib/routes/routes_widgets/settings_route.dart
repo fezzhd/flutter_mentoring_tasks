@@ -22,6 +22,12 @@ class _SettingsRouteState extends State<SettingsRoute> {
   }
 
   @override
+  void dispose() {
+    _settingsViewModel.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(AppLocalization.of(context).selectLanguage)),

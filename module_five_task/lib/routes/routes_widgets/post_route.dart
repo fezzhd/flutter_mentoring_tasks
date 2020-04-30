@@ -57,7 +57,7 @@ class _PostRouteState extends State<PostRoute> {
                 ),
                 MaterialButton(
                   color: Theme.of(context).primaryColor,
-                  child: Text(AppLocalization.of(context).selectPostTitle),
+                  child: Text(AppLocalization.of(context).selectPostTitle, style: Theme.of(context).primaryTextTheme.button),
                   onPressed: () => _postViewModel.getPostFromList(),
                 )
               ],
