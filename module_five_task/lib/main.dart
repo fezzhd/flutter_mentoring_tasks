@@ -8,8 +8,10 @@ import 'package:module_five_task/core/services/posts/post_service.dart';
 import 'package:module_five_task/core/view_models/app_view_model.dart';
 import 'package:module_five_task/core/view_models/post_list_view_model.dart';
 import 'package:module_five_task/core/view_models/post_view_model.dart';
+import 'package:module_five_task/core/view_models/settings_view_model.dart';
 import 'package:module_five_task/routes/routes_widgets/post_list_route.dart';
 import 'package:module_five_task/routes/routes_widgets/post_route.dart';
+import 'package:module_five_task/routes/routes_widgets/settings_route.dart';
 import 'core/consts/routes_paths.dart' as RoutesPaths;
 import 'generated/l10n.dart';
 
@@ -20,7 +22,6 @@ Future main() async{
   _initializeBootstrapper();
   WidgetsFlutterBinding.ensureInitialized();
   _appViewModel = getIt.get<AppViewModel>();
-  await _appViewModel.setCurrentLocalization();
   runApp(MyApp());
 }
 
@@ -32,6 +33,7 @@ void _initializeBootstrapper(){
   getIt.registerFactory<AppViewModel>(() => AppViewModel());
   getIt.registerFactory<PostViewModel>(() => PostViewModel());
   getIt.registerFactory<PostListViewModel>(() => PostListViewModel());
+  getIt.registerFactory<SettingsViewModel>(() => SettingsViewModel());
 }
 
 class MyApp extends StatefulWidget {
@@ -50,7 +52,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<Object>(
-      stream: _appViewModel.localizationSubject,
+      stream: _appViewModel.localizationStream,
       builder: (context, snapshot) {
         return MaterialApp(
           localizationsDelegates: [
@@ -64,7 +66,7 @@ class _MyAppState extends State<MyApp> {
             primarySwatch: Colors.red,
             primaryTextTheme: TextTheme(
               button: TextStyle(
-                color: Colors.black
+                color: Colors.white
               ),
               bodyText1: TextStyle(
                 color: Colors.black
@@ -85,6 +87,8 @@ class _MyAppState extends State<MyApp> {
         return MaterialPageRoute(builder: (_) => PostRoute());
       case RoutesPaths.listPostRoute:
         return MaterialPageRoute(builder: (_) => PostListRoute());
+      case RoutesPaths.settingsRoute:
+        return MaterialPageRoute(builder: (_) => SettingsRoute());
       default:
         return null;
     }

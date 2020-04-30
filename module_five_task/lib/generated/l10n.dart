@@ -53,6 +53,33 @@ class AppLocalization {
       args: [],
     );
   }
+
+  String get russianLanguage {
+    return Intl.message(
+      'Russian',
+      name: 'russianLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get englishLanguage {
+    return Intl.message(
+      'English',
+      name: 'englishLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get selectLanguage {
+    return Intl.message(
+      'Select a language',
+      name: 'selectLanguage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {

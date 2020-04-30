@@ -1,5 +1,8 @@
 {
   "noPost": "Нету поста",
   "mainRouteTitle" : "Пост",
-  "selectPostTitle" : "Выбрать пост"
+  "selectPostTitle" : "Выбрать пост",
+  "russianLanguage": "Русский",
+  "englishLanguage": "Английский",
+  "selectLanguage": "Выберите язык"
 }
