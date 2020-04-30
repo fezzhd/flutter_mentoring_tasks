@@ -1,17 +1,16 @@
-import 'package:module_five_task/core/services/posts/models/post.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:get_it/get_it.dart';
+import 'package:module_five_task/core/services/posts/models/post.dart';
+import 'package:module_five_task/core/view_models/view_model_mixin.dart';
 import 'package:module_five_task/core/services/app_services/navigation_service.dart';
 import '../consts/routes_paths.dart' as RoutesPaths;
 
-class PostViewModel {
+class PostViewModel with ViewModelMixin {
 
-  final _getIt = GetIt.instance;
   final PublishSubject<Post> postObservable = PublishSubject<Post>();
   NavigationService _navigationService;
 
   PostViewModel(){
-    _navigationService = _getIt.get<NavigationService>();
+    _navigationService = locator.get<NavigationService>();
   }
 
   Future getPostFromList() async{

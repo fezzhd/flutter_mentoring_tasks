@@ -9,7 +9,7 @@ class AppLocalizationService with SharedPreferencesMixin{
 
   static String _localizationKey = "locale";
 
-  final PublishSubject<Locale> _localizationChangedSubject = PublishSubject<Locale>();
+  final PublishSubject<Locale> localizationChangedSubject = PublishSubject<Locale>();
 
   Future changeLocaleAsync(Locale locale) async {
     assert(locale != null);
@@ -17,7 +17,7 @@ class AppLocalizationService with SharedPreferencesMixin{
     var appLocaleJsonMap = AppLocale(language: locale.languageCode, region: locale.countryCode).toJson();
     var pref = await getSharedInstanceAsync();
     pref.setString(_localizationKey, json.encode(appLocaleJsonMap));
-    _localizationChangedSubject.add(locale);
+    localizationChangedSubject.add(locale);
   }
 
   Future<Locale> getCurrentLocale() async{
