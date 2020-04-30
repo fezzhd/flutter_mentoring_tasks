@@ -9,21 +9,23 @@ class AppViewModel with ViewModelMixin implements Disposable{
 
   AppLocalizationService _localizationService;
   
-  BehaviorSubject<Locale> localizationSubject = BehaviorSubject<Locale>();
+  BehaviorSubject<Locale> _localizationSubject = BehaviorSubject<Locale>();
+
+  Stream<Locale> localizationStream;
   
   AppViewModel(){
     _localizationService = locator.get<AppLocalizationService>();
-    localizationSubject.mergeWith([_localizationService.localizationChangedSubject]);
+    localizationStream = _localizationSubject.mergeWith([_localizationService.localizationChangedSubject, _localizationService.getCurrentLocale().asStream()]).asBroadcastStream();
   }
 
   Future setCurrentLocalization() async{
     var currentLocale = await _localizationService.getCurrentLocale();
-    localizationSubject.add(currentLocale);
+    _localizationSubject.add(currentLocale);
   }
 
   @override
   void dispose() {
-    localizationSubject.close();
+    _localizationSubject.close();
   }
 
 }
