@@ -17,12 +17,18 @@ import 'generated/l10n.dart';
 
 GetIt getIt = GetIt.instance;
 AppViewModel _appViewModel;
+Locale _startLocale;
 
 Future main() async{
+  await _initializeApp();
+  runApp(MyApp());
+}
+
+Future _initializeApp() async {
   _initializeBootstrapper();
   WidgetsFlutterBinding.ensureInitialized();
   _appViewModel = getIt.get<AppViewModel>();
-  runApp(MyApp());
+  _startLocale = await _appViewModel.getCurrentLocale();
 }
 
 void _initializeBootstrapper(){
@@ -53,6 +59,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return StreamBuilder<Object>(
       stream: _appViewModel.localizationStream,
+      initialData: _startLocale,
       builder: (context, snapshot) {
         return MaterialApp(
           localizationsDelegates: [
